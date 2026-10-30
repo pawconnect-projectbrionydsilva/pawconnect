@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawConnect | Every Paw Deserves Love</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">🐾 PawConnect</div>
+
+        <nav>
+           <a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#adopt">Adopt</a>
+<a href="#report">Report</a>
+<a href="#care">Care</a>
+<a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+
+    <div class="hero-content">
+        <p class="welcome">WELCOME TO PAWCONNECT 🐾</p>
+
+        <h1>Every Paw Deserves a Loving Home.</h1>
+
+        <p>
+            Together, we can make a difference.
+            Help stray animals find safety, care and
+            a family that loves them.
+        </p>
+
+        <button onclick="location.href='#adopt'">
+            Find Your Friend
+        </button>
+    </div>
+
+   <div class="hero-image">
+    <img
+        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=900"
+        alt="Cute pets waiting for a loving home">
+</div>
+</section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>Why PawConnect?</h2>
+
+        <p>
+            PawConnect is a community-based platform
+            dedicated to helping stray animals through
+            rescue awareness, adoption and responsible care.
+        </p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>How You Can Help</h2>
+
+        <div class="service-container">
+
+            <div class="service-card">
+                <h3>🐕 Adopt</h3>
+                <p>Give a homeless animal a loving forever home.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>❤️ Rescue</h3>
+                <p>Help injured and abandoned animals get attention.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🐾 Care</h3>
+                <p>Spread awareness about animal welfare and kindness.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Adoption Section -->
+    <section id="adopt">
+    <h2>Meet Your New Best Friend</h2>
+    <p>Every animal deserves a chance to be loved.</p>
+
+    <div class="service-container">
+
+        <div class="service-card pet-card">
+            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600"
+                 alt="Bruno the dog">
+            <h3>Bruno 🐶</h3>
+            <p>Age: 2 years</p>
+            <p>Friendly, playful and full of energy.</p>
+            <button>Interested in Adopting</button>
+        </div>
+
+        <div class="service-card pet-card">
+            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600"
+                 alt="Misty the cat">
+            <h3>Misty 🐱</h3>
+            <p>Age: 1 year</p>
+            <p>A gentle companion looking for a home.</p>
+            <button>Interested in Adopting</button>
+        </div>
+
+        <div class="service-card pet-card">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600"
+                 alt="Cookie the dog">
+            <h3>Cookie 🐕</h3>
+            <p>Age: 8 months</p>
+            <p>A sweet little friend who needs your love.</p>
+            <button>Interested in Adopting</button>
+        </div>
+    </section>
+<section class="report" id="report">
+    <h2>Report a Stray Animal</h2>
+    <p>Spotted an animal that needs help? Let us know so we can help!</p>
+
+    <form id="reportForm">
+        <input type="text" placeholder="Your Name" required>
+
+        <input type="text" placeholder="Animal Type (Dog/Cat)" required>
+
+        <input type="text" placeholder="Location of Animal" required>
+
+        <textarea placeholder="Describe the animal and its condition" required></textarea>
+
+        <input type="tel" placeholder="Your Contact Number" required>
+
+        <button type="submit">Submit Report</button>
+    </form>
+</section>
+    <!-- Contact Section -->
+     <section class="care" id="care">
+    <h2>Care for Our Furry Friends</h2>
+    <p>Every animal deserves kindness, safety and proper care.</p>
+
+    <div class="care-container">
+
+        <div class="care-card">
+            <h3>🍲 Food & Water</h3>
+            <p>Provide clean drinking water and nutritious food to stray animals.</p>
+        </div>
+
+        <div class="care-card">
+            <h3>🏥 Medical Care</h3>
+            <p>Help injured and sick animals by contacting a veterinary doctor or rescue group.</p>
+        </div>
+
+        <div class="care-card">
+            <h3>❤️ Kindness & Safety</h3>
+            <p>Treat stray animals with compassion and provide them with a safe environment.</p>
+        </div>
+
+    </div>
+</section>
+    <section class="contact" id="contact">
+    <h2>Get in Touch</h2>
+    <p>Want to adopt, volunteer or help an animal? Contact us!</p>
+
+    <div class="contact-info">
+        <p><strong>🐾 Organization:</strong> PawConnect</p>
+        <p><strong>📧 Email:</strong> pawconnect@gmail.com</p>
+        <p><strong>📍 Location:</strong> Vasai, Maharashtra</p>
+    </div>
+
+    <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 PawConnect | Every Paw Deserves Love 🐾</p>
+    </footer>
+
+<script>
+    const adoptionButtons = document.querySelectorAll(".pet-card button");
+
+    adoptionButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            const petName = button.parentElement.querySelector("h3").textContent;
+
+            alert("Thank you for your interest in adopting " + petName + "! Please contact PawConnect for more details.");
+        });
+    });
+    const reportForm = document.getElementById("reportForm");
+
+reportForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("Thank you! Your stray animal report has been submitted successfully.");
+
+    reportForm.reset();
+});
+const contactForm = document.getElementById("contactForm");
+
+contactForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    alert("Thank you for contacting PawConnect! We will get back to you soon.");
+
+    contactForm.reset();
+});
+</script>
+</body>
+</html>

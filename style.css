@@ -1,0 +1,432 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #faf9f4;
+    color: #354b3b;
+}
+
+/* Navigation */
+header {
+    background: #fff;
+    padding: 22px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 800;
+    color: #456b50;
+}
+
+nav a {
+    text-decoration: none;
+    color: #354b3b;
+    margin-left: 28px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #85a88b;
+}
+
+/* Hero */
+.hero {
+    min-height: 520px;
+    padding: 100px 8%;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(110deg, #e1ecdf, #f4eee1);
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.15;
+    max-width: 650px;
+    margin-bottom: 22px;
+    color: #2f4d38;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.8;
+    max-width: 530px;
+    margin-bottom: 30px;
+    color: #596b5c;
+}
+
+/* Buttons */
+button {
+    background: #456b50;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #2e4d37;
+    transform: translateY(-3px);
+}
+
+/* Sections */
+section {
+    padding: 85px 8%;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    color: #365b43;
+    margin-bottom: 20px;
+}
+
+section > p {
+    color: #718074;
+    font-size: 17px;
+    line-height: 1.8;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* Service and adoption cards */
+.services {
+    background: #f0f4eb;
+}
+
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+}
+
+.service-card {
+    background: white;
+    padding: 35px 25px;
+    width: 280px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.service-card h3 {
+    color: #456b50;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #718074;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    background: #365b43;
+    color: white;
+    text-align: center;
+    padding: 28px;
+    font-size: 14px;
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+     }
+        .hero-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .service-container,
+    .pet-container,
+    .care-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card,
+    .pet-card,
+    .care-card {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .report form,
+    .contact form {
+        width: 100%;
+    }
+    }
+
+    nav a {
+        margin: 0 7px;
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 75px 8%;
+        min-height: 430px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    section h2 {
+        font-size: 29px;
+    }
+}
+/* Hero image design */
+.hero {
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.welcome {
+    color: #66866b;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 480px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 700px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-image img {
+        height: 260px;
+    }
+}
+/* Adoption pet cards */
+.pet-card {
+    padding: 15px;
+    overflow: hidden;
+}
+
+.pet-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 13px;
+    margin-bottom: 18px;
+}
+
+.pet-card h3 {
+    margin-bottom: 12px;
+}
+
+.pet-card button {
+    margin-top: 10px;
+    width: 100%;
+}
+/* Report a Stray Animal Section */
+
+.report {
+    background-color: #f0f5ed;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.report h2 {
+    color: #315c43;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.report p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.report form {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.report input,
+.report textarea {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.report textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.report button {
+    background-color: #477b58;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.report button:hover {
+    background-color: #315c43;
+}
+/* Animal Care Section */
+
+.care {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.care h2 {
+    color: #315c43;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.care > p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.care-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.care-card {
+    background-color: #f0f5ed;
+    padding: 25px;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.care-card:hover {
+    transform: translateY(-5px);
+}
+
+.care-card h3 {
+    color: #315c43;
+    margin-bottom: 15px;
+}
+
+.care-card p {
+    color: #555;
+    line-height: 1.6;
+}
+/* Contact Section */
+
+.contact {
+    background-color: #f0f5ed;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact h2 {
+    color: #315c43;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact > p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.contact-info {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    color: #315c43;
+}
+
+.contact form {
+    max-width: 550px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact input,
+.contact textarea {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+.contact textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.contact button {
+    background-color: #477b58;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact button:hover {
+    background-color: #315c43;
+}
