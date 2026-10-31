@@ -84,3 +84,15 @@
     min-height: 320px;
   }
 }
+@media (max-width: 600px) {
+  .slideshow .floating-card {
+    left: 12px;
+    right: 12px;
+    bottom: 65px;
+    max-width: calc(100% - 24px);
+  }
+
+  .slideshow .slide-controls {
+    bottom: 10px;
+  }
+}
