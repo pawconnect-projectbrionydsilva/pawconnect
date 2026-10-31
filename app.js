@@ -138,3 +138,62 @@ $("#adminLoginForm").addEventListener("submit", event => {
     toast("Incorrect admin password!");
   }
 });
+// PawConnect automatic slideshow
+const slides = document.querySelectorAll(".slideshow .slide");
+const dotsContainer = document.getElementById("slideDots");
+const nextButton = document.getElementById("nextSlide");
+const prevButton = document.getElementById("prevSlide");
+
+let currentSlide = 0;
+let slideTimer;
+
+function showSlide(index) {
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === currentSlide);
+  });
+
+  document.querySelectorAll("#slideDots button").forEach((dot, i) => {
+    dot.classList.toggle("active", i === currentSlide);
+  });
+}
+
+slides.forEach((slide, i) => {
+  const dot = document.createElement("button");
+  dot.setAttribute("aria-label", `Go to photo ${i + 1}`);
+  dot.addEventListener("click", () => {
+    showSlide(i);
+    restartSlideshow();
+  });
+  dotsContainer.appendChild(dot);
+});
+
+function nextSlide() {
+  showSlide(currentSlide + 1);
+}
+
+function restartSlideshow() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(nextSlide, 4000);
+}
+
+nextButton.addEventListener("click", () => {
+  showSlide(currentSlide + 1);
+  restartSlideshow();
+});
+
+prevButton.addEventListener("click", () => {
+  showSlide(currentSlide - 1);
+  restartSlideshow();
+});
+
+showSlide(0);
+restartSlideshow();
+// Hidden admin login shortcut
+document.addEventListener("keydown", function(event) {
+  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "a") {
+    event.preventDefault();
+    showModal("adminLoginModal");
+  }
+});

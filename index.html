@@ -43,11 +43,50 @@
             </div>
             <div class="hero-note"><span class="note-icon">♡</span><span><strong>Kindness is contagious.</strong><small>Pass it on, one paw at a time.</small></span></div>
           </div>
-          <div class="hero-art">
-            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85" alt="Happy dog looking at the camera">
-            <div class="floating-card"><span class="floating-icon">🐶</span><span><strong>A home changes everything</strong><small>Adopt • Care • Make a difference</small></span></div>
-            <span class="decor decor-one">✳</span><span class="decor decor-two">♡</span>
-          </div>
+          <div class="hero-art slideshow">
+  <div class="slides">
+    <!-- Dogs -->
+    <!-- 1. Dog -->
+<img class="slide active" src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85" alt="Happy dog">
+
+<!-- 2. Cat -->
+<img class="slide" src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&fit=crop&w=1000&q=85" alt="Beautiful cat">
+
+<!-- 3. Human with pet -->
+<img class="slide" src="https://images.unsplash.com/photo-1551717743-49959800b1f6?auto=format&fit=crop&w=1000&q=85" alt="Person with a dog">
+
+<!-- 4. Stray animal only -->
+<img class="slide" src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?auto=format&fit=crop&w=1000&q=85" alt="Dog outdoors">
+
+<!-- 5. Dog -->
+<img class="slide" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=85" alt="Golden retriever">
+
+<!-- 6. Cat -->
+<img class="slide" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=1000&q=85" alt="Cute cat">
+
+<!-- 7. Human with pets -->
+<img class="slide" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1000&q=85" alt="Dogs playing together">
+
+<!-- 8. Stray animal only -->
+<img class="slide" src="https://images.unsplash.com/photo-1511044568932-338cba0ad803?auto=format&fit=crop&w=1000&q=85" alt="Cat outdoors">
+</div>
+  <div class="floating-card">
+    <span class="floating-icon">🐶</span>
+    <span>
+      <strong>A home changes everything</strong>
+      <small>Adopt • Care • Make a difference</small>
+    </span>
+  </div>
+
+  <span class="decor decor-one">✳</span>
+  <span class="decor decor-two">♡</span>
+
+  <div class="slide-controls">
+    <button id="prevSlide" aria-label="Previous photo">‹</button>
+    <div id="slideDots"></div>
+    <button id="nextSlide" aria-label="Next photo">›</button>
+  </div>
+</div>
         </div>
 
         <div class="quick-actions">
@@ -132,8 +171,8 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <!-- PawConnect Admin Panel -->
-   <button class="btn btn-outline" id="adminLoginOpen"
-style="position:fixed;bottom:85px;right:18px;z-index:50;">
+  <button class="btn btn-outline" id="adminLoginOpen"
+style="display:none;position:fixed;bottom:85px;right:18px;z-index:50;">
   Admin Login 🔐
 </button>
 <button class="btn btn-primary" id="adminOpen"
