@@ -1,0 +1,19 @@
+{
+  "name": "PawConnect — Every Paw Deserves a Home",
+  "short_name": "PawConnect",
+  "description": "A community-based stray animal rescue and adoption platform.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f5ee",
+  "theme_color": "#71866f",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./assets/pawconnect-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

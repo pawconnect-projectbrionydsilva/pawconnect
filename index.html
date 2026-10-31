@@ -1,215 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawConnect | Every Paw Deserves Love</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#71866f">
+  <meta name="description" content="PawConnect helps communities care for, rescue and adopt stray animals.">
+  <title>PawConnect — Every paw deserves a home</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./assets/pawconnect-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
 </head>
-
 <body>
-
-    <!-- Navigation Bar -->
-    <header>
-        <div class="logo">🐾 PawConnect</div>
-
-        <nav>
-           <a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#adopt">Adopt</a>
-<a href="#report">Report</a>
-<a href="#care">Care</a>
-<a href="#contact">Contact</a>
-        </nav>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="PawConnect home">
+        <span class="brand-mark">🐾</span>
+        <span>Paw<span>Connect</span><small>EVERY PAW DESERVES A HOME</small></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home" data-nav="home">Home</a>
+        <a class="nav-link" href="#explore" data-nav="explore">Explore</a>
+        <a class="nav-link" href="#report" data-nav="report">Report a stray</a>
+        <a class="nav-link" href="#care" data-nav="care">Care & awareness</a>
+        <a class="nav-link" href="#contact" data-nav="contact">Contact</a>
+      </nav>
+      <div class="top-actions">
+        <button class="avatar-button" id="profileOpen" aria-label="Open profile"><span id="avatarInitial">♡</span></button>
+        <button class="login-top" id="loginOpen">Log in</button>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
+    <main>
+      <section class="screen active" id="home">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow"><span class="eyebrow-dot"></span> A LITTLE KINDNESS GOES A LONG WAY</span>
+            <h1>Small acts.<br><em>Big pawprints.</em></h1>
+            <p>Every animal deserves safety, care and a place to call home. Be the reason a little life gets a second chance.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#explore">Meet your new best friend <span>↗</span></a>
+              <a class="text-link" href="#report">Help an animal in need <span>→</span></a>
+            </div>
+            <div class="hero-note"><span class="note-icon">♡</span><span><strong>Kindness is contagious.</strong><small>Pass it on, one paw at a time.</small></span></div>
+          </div>
+          <div class="hero-art">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=1000&q=85" alt="Happy dog looking at the camera">
+            <div class="floating-card"><span class="floating-icon">🐶</span><span><strong>A home changes everything</strong><small>Adopt • Care • Make a difference</small></span></div>
+            <span class="decor decor-one">✳</span><span class="decor decor-two">♡</span>
+          </div>
+        </div>
 
-    <div class="hero-content">
-        <p class="welcome">WELCOME TO PAWCONNECT 🐾</p>
+        <div class="quick-actions">
+          <a class="quick-card" href="#explore"><span class="quick-icon peach">🐾</span><span><strong>Find a friend</strong><small>Meet animals waiting for a home</small></span><b>↗</b></a>
+          <a class="quick-card" href="#report"><span class="quick-icon green">📍</span><span><strong>Report a stray</strong><small>Help an animal get the care it needs</small></span><b>↗</b></a>
+          <a class="quick-card" href="#care"><span class="quick-icon yellow">♡</span><span><strong>Learn to care</strong><small>Simple ways to make a difference</small></span><b>↗</b></a>
+        </div>
 
-        <h1>Every Paw Deserves a Loving Home.</h1>
+        <section class="section-block">
+          <div class="section-heading"><div><span class="eyebrow">LOOKING FOR A FOREVER HOME</span><h2>Meet some lovely souls</h2></div><a class="text-link" href="#explore">See all animals <span>→</span></a></div>
+          <div class="animal-grid featured-grid" id="featuredAnimals"></div>
+        </section>
+        <section class="impact-strip"><div><span class="impact-icon">💚</span><h3>One community. Countless kind hearts.</h3><p>Whether you adopt, report an animal in need or share what you know, your kindness can change a life.</p></div><a class="btn btn-light" href="#report">Be a helping hand <span>→</span></a></section>
+      </section>
 
-        <p>
-            Together, we can make a difference.
-            Help stray animals find safety, care and
-            a family that loves them.
-        </p>
+      <section class="screen" id="explore">
+        <div class="page-heading"><span class="eyebrow">YOUR NEW BEST FRIEND MIGHT BE HERE</span><h1>Find your <em>forever friend.</em></h1><p>Get to know the lovely animals looking for a safe and loving home.</p></div>
+        <div class="filter-panel">
+          <label>Animal type<select id="typeFilter"><option value="all">All animals</option><option value="Dog">Dogs</option><option value="Cat">Cats</option></select></label>
+          <label>Age group<select id="ageFilter"><option value="all">Any age</option><option value="Young">Puppy / Kitten</option><option value="Adult">Adult</option><option value="Senior">Senior</option></select></label>
+          <label>Location<input id="locationFilter" type="text" placeholder="Enter a location"></label>
+          <button class="btn btn-primary filter-button" id="clearFilters">Clear filters</button>
+        </div>
+        <div class="results-line"><span id="resultCount">3 lovely animals</span><span>Every adoption begins with a little hello.</span></div>
+        <div class="animal-grid" id="allAnimals"></div>
+      </section>
 
-        <button onclick="location.href='#adopt'">
-            Find Your Friend
-        </button>
-    </div>
+      <section class="screen" id="report">
+        <div class="page-heading"><span class="eyebrow">BE THEIR VOICE</span><h1>Seen an animal <em>in need?</em></h1><p>Share what you noticed. Clear details can help someone understand the situation and respond appropriately.</p></div>
+        <div class="form-layout">
+          <div class="form-aside"><div class="aside-illustration">🐕</div><h2>A small report can make a big difference.</h2><p>If an animal is in immediate danger, contact your local animal welfare organisation or emergency service directly.</p><div class="aside-tip"><span>✦</span> Share the animal's exact location and only approach if it is safe to do so.</div></div>
+          <form class="form-card" id="reportForm">
+            <h2>Report an animal</h2><p class="form-subtitle">Fields marked * are required.</p>
+            <div class="form-row"><label>Your name *<input name="name" required placeholder="Your full name"></label><label>Phone number *<input name="phone" required type="tel" placeholder="Your contact number"></label></div>
+            <div class="form-row"><label>Animal type *<select name="animalType" required><option value="">Select type</option><option>Dog</option><option>Cat</option><option>Other</option></select></label><label>Animal's condition *<select name="condition" required><option value="">Select condition</option><option>Looks healthy</option><option>Injured</option><option>Ill / weak</option><option>Trapped / unsafe</option><option>Needs food or water</option><option>Not sure</option></select></label></div>
+            <label>Location *<input name="location" required placeholder="Street, area or nearby landmark"></label>
+            <label>Additional details<textarea name="details" rows="4" placeholder="Describe what you saw, when you saw the animal, etc."></textarea></label>
+            <label class="upload-label">Add a photo (optional)<input type="file" id="reportPhoto" accept="image/*"><span class="upload-box">＋ <span id="uploadText">Choose a photo from your device</span></span></label>
+            <img id="photoPreview" class="photo-preview" alt="Selected report photo preview" hidden>
+            <button class="btn btn-primary btn-wide" type="submit">Submit report <span>→</span></button>
+            <p class="privacy-note">Demo mode: this report is saved only in this browser on this device.</p>
+          </form>
+        </div>
+      </section>
 
-   <div class="hero-image">
-    <img
-        src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=900"
-        alt="Cute pets waiting for a loving home">
+      <section class="screen" id="care">
+        <div class="page-heading"><span class="eyebrow">A LITTLE KNOWLEDGE, A LOT OF LOVE</span><h1>Care makes a <em>difference.</em></h1><p>Simple, thoughtful ways to make your neighbourhood safer for animals.</p></div>
+        <div class="care-grid">
+          <article class="care-card"><div class="care-emoji">🥣</div><span class="care-number">01 / FOOD & WATER</span><h2>Offer food and fresh water</h2><p>Place clean water in a safe, shaded spot. Offer suitable food and keep feeding areas tidy.</p></article>
+          <article class="care-card"><div class="care-emoji">🩺</div><span class="care-number">02 / HEALTH</span><h2>Encourage timely treatment</h2><p>Injured or unwell animals may need a qualified veterinarian. Avoid giving human medicines.</p></article>
+          <article class="care-card"><div class="care-emoji">🏡</div><span class="care-number">03 / ADOPTION</span><h2>Choose responsible adoption</h2><p>Think about time, space and long-term costs before adopting. A pet is a lifelong commitment.</p></article>
+          <article class="care-card"><div class="care-emoji">🤍</div><span class="care-number">04 / KINDNESS</span><h2>Be gentle and patient</h2><p>Approach unfamiliar animals calmly, give them space and never force contact.</p></article>
+        </div>
+        <div class="care-banner"><span>🐾</span><div><h2>Be kind. Be informed. Be their friend.</h2><p>Small everyday actions help build a community where animals are treated with compassion.</p></div><a href="#report" class="btn btn-light">Help an animal <span>→</span></a></div>
+      </section>
+
+      <section class="screen" id="contact">
+        <div class="page-heading"><span class="eyebrow">WE'D LOVE TO HEAR FROM YOU</span><h1>Let's make good <em>things happen.</em></h1><p>Have a question, suggestion or want to get involved? Send us a message.</p></div>
+        <div class="contact-layout">
+          <div class="contact-aside"><div class="contact-blob">💌</div><h2>Every kind heart belongs here.</h2><p>Reach out with questions about the platform, animal welfare awareness or ways to help your community.</p><div class="contact-detail"><span>✉</span><div><small>EMAIL</small><strong>pawconnect@example.com</strong></div></div><p class="tiny-note">Replace this placeholder with your project's actual contact email before publishing.</p></div>
+          <form class="form-card contact-form" id="contactForm"><h2>Send us a message</h2><p class="form-subtitle">We'll be happy to hear from you.</p><label>Your name *<input name="name" required placeholder="Your name"></label><label>Email address *<input name="email" required type="email" placeholder="you@example.com"></label><label>Subject *<input name="subject" required placeholder="What is this about?"></label><label>Message *<textarea name="message" required rows="5" placeholder="Write your message here..."></textarea></label><button class="btn btn-primary btn-wide" type="submit">Send message <span>→</span></button><p class="privacy-note">Demo mode: this message is saved only in this browser on this device.</p></form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">🐾</span><span>Paw<span>Connect</span><small>EVERY PAW DESERVES A HOME</small></span></a><p>Made with love for the paws in our community. ♡</p><span>© 2026 PawConnect</span></footer>
+  </div>
+
+  <nav class="bottom-nav" aria-label="App navigation">
+    <a href="#home" class="bottom-link active" data-nav="home"><span>⌂</span><small>Home</small></a>
+    <a href="#explore" class="bottom-link" data-nav="explore"><span>🐾</span><small>Explore</small></a>
+    <a href="#report" class="bottom-link report-tab" data-nav="report"><span>＋</span><small>Report</small></a>
+    <a href="#care" class="bottom-link" data-nav="care"><span>♡</span><small>Care</small></a>
+    <button class="bottom-link" id="mobileProfile"><span>◯</span><small>Profile</small></button>
+  </nav>
+
+  <div class="modal-backdrop" id="authModal" hidden><section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="authTitle"><button class="modal-close" data-close="authModal" aria-label="Close">×</button><div class="modal-paw">🐾</div><span class="eyebrow">WELCOME TO THE PACK</span><h2 id="authTitle">Come on in.</h2><p class="modal-desc">Sign in or create a local demo profile.</p><div class="auth-tabs"><button class="auth-tab active" data-auth="login">Log in</button><button class="auth-tab" data-auth="signup">Sign up</button></div><form id="authForm"><label id="authNameWrap" hidden>Your name<input name="name" placeholder="Your name"></label><label>Email address<input name="email" type="email" required placeholder="you@example.com"></label><label>Password<input name="password" type="password" required minlength="4" placeholder="At least 4 characters"></label><button class="btn btn-primary btn-wide" type="submit" id="authSubmit">Log in <span>→</span></button></form><p class="privacy-note">Demo only: profile details stay in this browser and are not securely authenticated.</p></section></div>
+
+  <div class="modal-backdrop" id="profileModal" hidden><section class="modal-card profile-modal" role="dialog" aria-modal="true" aria-labelledby="profileTitle"><button class="modal-close" data-close="profileModal" aria-label="Close">×</button><div class="profile-avatar" id="profileAvatar">♡</div><span class="eyebrow">YOUR PAWCONNECT PROFILE</span><h2 id="profileTitle">Hello, friend!</h2><p class="modal-desc" id="profileEmail">Log in to create a demo profile.</p><div class="profile-actions"><button class="btn btn-primary btn-wide" id="profileLoginAction">Log in / Sign up</button><button class="btn btn-outline btn-wide" id="logoutButton" hidden>Log out</button></div><p class="privacy-note">This is a local demo profile, not a real online account.</p></section></div>
+
+  <div class="modal-backdrop" id="interestModal" hidden><section class="modal-card" role="dialog" aria-modal="true"><button class="modal-close" data-close="interestModal" aria-label="Close">×</button><div class="modal-paw">💚</div><span class="eyebrow">A NEW FRIENDSHIP?</span><h2>Interested in <span id="interestAnimal">this lovely soul</span>?</h2><p class="modal-desc">Leave your details so you can take the next step. This demo stores your interest only on this device.</p><form id="interestForm"><input type="hidden" name="animal"><label>Your name<input name="name" required placeholder="Your name"></label><label>Phone or email<input name="contact" required placeholder="How can someone reach you?"></label><label>A little message<textarea name="message" rows="3" placeholder="Tell us why you'd love to adopt..."></textarea></label><button class="btn btn-primary btn-wide" type="submit">Send interest <span>→</span></button></form></section></div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <!-- PawConnect Admin Panel -->
+   <button class="btn btn-outline" id="adminLoginOpen"
+style="position:fixed;bottom:85px;right:18px;z-index:50;">
+  Admin Login 🔐
+</button>
+<button class="btn btn-primary" id="adminOpen"
+style="display:none;position:fixed;bottom:85px;right:18px;z-index:50;">
+  Admin Panel ⚙
+</button>
+
+<!-- Admin Login Modal -->
+<div class="modal-backdrop" id="adminLoginModal" hidden>
+  <section class="modal-card" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close="adminLoginModal">×</button>
+
+    <h2>Welcome, Admin 🐾</h2>
+    <p>Enter your admin password.</p>
+
+    <form id="adminLoginForm">
+      <input type="password" id="adminPassword"
+        placeholder="Admin password" required>
+
+      <button class="btn btn-primary btn-wide" type="submit">
+        Login →
+      </button>
+    </form>
+  </section>
 </div>
-</section>
 
-    <!-- About Section -->
-    <section id="about">
-        <h2>Why PawConnect?</h2>
+<!-- Admin Panel Modal -->
+<div class="modal-backdrop" id="adminModal" hidden>
+  <section class="modal-card" role="dialog" aria-modal="true"
+    style="max-width:700px;max-height:85vh;overflow-y:auto;">
 
-        <p>
-            PawConnect is a community-based platform
-            dedicated to helping stray animals through
-            rescue awareness, adoption and responsible care.
-        </p>
-    </section>
+    <button class="modal-close" data-close="adminModal">×</button>
 
-    <!-- Services Section -->
-    <section class="services">
-        <h2>How You Can Help</h2>
+    <span class="eyebrow">PAWCONNECT MANAGEMENT</span>
+    <h2>Admin Panel 🐾</h2>
+    <button class="btn btn-outline" id="adminLogout">
+  Logout ↗
+</button>
+    <p class="modal-desc">Manage your website submissions.</p>
 
-        <div class="service-container">
+    <h3>🐶 Stray Reports</h3>
+    <div id="adminReports">No reports yet.</div>
 
-            <div class="service-card">
-                <h3>🐕 Adopt</h3>
-                <p>Give a homeless animal a loving forever home.</p>
-            </div>
+    <hr>
 
-            <div class="service-card">
-                <h3>❤️ Rescue</h3>
-                <p>Help injured and abandoned animals get attention.</p>
-            </div>
+    <h3>🏡 Adoption Interests</h3>
+    <div id="adminInterests">No adoption interests yet.</div>
 
-            <div class="service-card">
-                <h3>🐾 Care</h3>
-                <p>Spread awareness about animal welfare and kindness.</p>
-            </div>
+    <hr>
 
-        </div>
-    </section>
+    <h3>✉️ Contact Messages</h3>
+    <div id="adminMessages">No messages yet.</div>
 
-    <!-- Adoption Section -->
-    <section id="adopt">
-    <h2>Meet Your New Best Friend</h2>
-    <p>Every animal deserves a chance to be loved.</p>
-
-    <div class="service-container">
-
-        <div class="service-card pet-card">
-            <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=600"
-                 alt="Bruno the dog">
-            <h3>Bruno 🐶</h3>
-            <p>Age: 2 years</p>
-            <p>Friendly, playful and full of energy.</p>
-            <button>Interested in Adopting</button>
-        </div>
-
-        <div class="service-card pet-card">
-            <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600"
-                 alt="Misty the cat">
-            <h3>Misty 🐱</h3>
-            <p>Age: 1 year</p>
-            <p>A gentle companion looking for a home.</p>
-            <button>Interested in Adopting</button>
-        </div>
-
-        <div class="service-card pet-card">
-            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=600"
-                 alt="Cookie the dog">
-            <h3>Cookie 🐕</h3>
-            <p>Age: 8 months</p>
-            <p>A sweet little friend who needs your love.</p>
-            <button>Interested in Adopting</button>
-        </div>
-    </section>
-<section class="report" id="report">
-    <h2>Report a Stray Animal</h2>
-    <p>Spotted an animal that needs help? Let us know so we can help!</p>
-
-    <form id="reportForm">
-        <input type="text" placeholder="Your Name" required>
-
-        <input type="text" placeholder="Animal Type (Dog/Cat)" required>
-
-        <input type="text" placeholder="Location of Animal" required>
-
-        <textarea placeholder="Describe the animal and its condition" required></textarea>
-
-        <input type="tel" placeholder="Your Contact Number" required>
-
-        <button type="submit">Submit Report</button>
-    </form>
-</section>
-    <!-- Contact Section -->
-     <section class="care" id="care">
-    <h2>Care for Our Furry Friends</h2>
-    <p>Every animal deserves kindness, safety and proper care.</p>
-
-    <div class="care-container">
-
-        <div class="care-card">
-            <h3>🍲 Food & Water</h3>
-            <p>Provide clean drinking water and nutritious food to stray animals.</p>
-        </div>
-
-        <div class="care-card">
-            <h3>🏥 Medical Care</h3>
-            <p>Help injured and sick animals by contacting a veterinary doctor or rescue group.</p>
-        </div>
-
-        <div class="care-card">
-            <h3>❤️ Kindness & Safety</h3>
-            <p>Treat stray animals with compassion and provide them with a safe environment.</p>
-        </div>
-
-    </div>
-</section>
-    <section class="contact" id="contact">
-    <h2>Get in Touch</h2>
-    <p>Want to adopt, volunteer or help an animal? Contact us!</p>
-
-    <div class="contact-info">
-        <p><strong>🐾 Organization:</strong> PawConnect</p>
-        <p><strong>📧 Email:</strong> pawconnect@gmail.com</p>
-        <p><strong>📍 Location:</strong> Vasai, Maharashtra</p>
-    </div>
-
-    <form id="contactForm">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 PawConnect | Every Paw Deserves Love 🐾</p>
-    </footer>
-
-<script>
-    const adoptionButtons = document.querySelectorAll(".pet-card button");
-
-    adoptionButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            const petName = button.parentElement.querySelector("h3").textContent;
-
-            alert("Thank you for your interest in adopting " + petName + "! Please contact PawConnect for more details.");
-        });
-    });
-    const reportForm = document.getElementById("reportForm");
-
-reportForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    alert("Thank you! Your stray animal report has been submitted successfully.");
-
-    reportForm.reset();
-});
-const contactForm = document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    alert("Thank you for contacting PawConnect! We will get back to you soon.");
-
-    contactForm.reset();
-});
-</script>
+  </section>
+</div>
+ <script src="./app.js"></script>
 </body>
 </html>
