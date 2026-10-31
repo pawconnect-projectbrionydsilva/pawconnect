@@ -80,19 +80,29 @@
 }
 
 @media (max-width: 600px) {
-  .slideshow .slides {
-    min-height: 320px;
+  .slideshow {
+    min-height: 380px;
   }
-}
-@media (max-width: 600px) {
+
+  .slideshow .slides {
+    min-height: 380px;
+  }
+
   .slideshow .floating-card {
-    left: 12px;
-    right: 12px;
-    bottom: 65px;
-    max-width: calc(100% - 24px);
+    position: absolute;
+    bottom: 58px !important;
+    left: 12px !important;
+    right: 12px !important;
+    width: auto;
+    max-width: none;
+    z-index: 4;
   }
 
   .slideshow .slide-controls {
-    bottom: 10px;
+    position: absolute;
+    bottom: 8px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
   }
 }
